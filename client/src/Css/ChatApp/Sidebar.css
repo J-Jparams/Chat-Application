@@ -1,0 +1,75 @@
+#Sidebar {
+    background-color: #00000076;
+    min-width: 25%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.searchChat{
+    padding: 20px;
+    /* border: solid black ; */
+}
+
+.searchChat>input {
+    width: 96%;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    font-weight: 500;
+    background-color: #997af0;
+    border-color: #997af0;
+    box-shadow: 0px 5px 8px -7px rgba(0, 0, 0, .75);
+
+}
+
+::placeholder {
+    color: white;
+}
+
+.chats {
+    padding: 20px;
+}
+
+.chat {
+    display: flex;
+    background-color: #997af0;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 5px 8px -7px rgba(0, 0, 0, .75);
+
+}
+
+.chatIcon {
+    display: flex;
+    /* border: solid black 2px; */
+    width: fit-content;
+    border-radius: 999px;
+}
+
+.chat:hover {
+    background-color: #a187fc;
+}
+
+.chatRight {
+    margin: 0 10px;
+    width: fit-content;
+    margin-top: -20px;
+    margin-bottom: -10px;
+    color: white;
+}
+
+.chatRight>p {
+    width: fit-content;
+    margin-top: -18px;
+    margin-bottom: -10px;
+
+}
+
+
+.chatDate {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    color: white;
+;}

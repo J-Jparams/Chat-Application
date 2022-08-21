@@ -1,10 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Css/ChatApp/Sidebar.css';
 import Applogo from '../Assets/Applogo.png';
 import GroupChat from './GroupChat';
 
 const Sidebar = () => {
-  // const [data, setData] = useState;
+  const [data, setData]:any = useState("");
+
+
+
+
+
+
+  useEffect(() => {
+    let unmounted = false;
+    fetch("http://localhost:3001/groupChats")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        if(!unmounted) {
+          setData(data);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message, "SideBarError");
+      });
+
+    return () => {
+      unmounted = true;
+    };
+  }, []);
 
   return (
     <div id='Sidebar'>
@@ -13,27 +38,20 @@ const Sidebar = () => {
       </div>
       <div className='chats'>
         {/* The Line below is for mapping groupChats */}
-        {/* <div>
+        <div>
           {data &&
-            data.map((post:any, index:any) => {
+            data?.map((post:any, index:any) => {
               return (
                 <GroupChat 
                   key={index}
                   groupName={post.groupName} 
                   lastChat={post.lastChat} 
                   lastChatDate={post.lastChatDate}
-                  chatIcon={Applogo}
                 />
               )
             })
           }
-        </div> */}
-        <GroupChat 
-          groupName="Satchel Boys" 
-          lastChat={"What"} 
-          lastChatDate='2/1/22' 
-        />
-
+        </div>
       </div>
     </div>
   )

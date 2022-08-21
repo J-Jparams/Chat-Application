@@ -23,7 +23,7 @@
 
 }
 
-::placeholder {
+.searchChat>input::placeholder {
     color: white;
 }
 

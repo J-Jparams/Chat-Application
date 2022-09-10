@@ -40,10 +40,10 @@ const Sidebar = () => {
         {/* The Line below is for mapping groupChats */}
         <div>
           {data &&
-            data?.map((post:any, index:any) => {
+            data?.map((post:any, SideBar:any) => {
               return (
                 <GroupChat 
-                  key={index}
+                  key={SideBar}
                   groupName={post.groupName} 
                   lastChat={post.lastChat} 
                   lastChatDate={post.lastChatDate}

@@ -39,10 +39,10 @@ const UserSearch = () => {
         <div className='users'>
         <div>
           {data &&
-            data?.map((post:any, index:any) => {
+            data?.map((post:any, UserSearch:any) => {
               return (
                 <User 
-                  key={index}
+                  key={UserSearch}
                   userIcon={post.userIcon}
                   userName={post.userName}
                 />
